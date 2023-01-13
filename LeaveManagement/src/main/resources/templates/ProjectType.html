@@ -1,0 +1,30 @@
+<html>
+<a href="/">home</a>
+<head>Admin</head>
+
+<body>
+	<form action="#" th:object=${ProjectType} th:action="@{/insert}"  method="post">
+		
+		<div>
+			<label for="wonNumber">WON Number:</label>
+			<input type="text" name="wonNumber"><br>
+
+		</div>
+		<div>
+			<label for="empid">Employee ID:</label>
+			<input type="text" name="empId"><br>
+
+		</div>
+		<div>
+			<label for="empName" name="empName">Employee Name:</label>
+			<input type="text" name="empName" maxlength="20"><br>
+		</div>
+		<div>
+		    <select name="project">
+		    <option th:each = "project: ${projectList}" th:text="${project}">
+		</div>
+		<input type="submit" value="Submit">
+	</form>
+</body>
+
+</html>
